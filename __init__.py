@@ -127,6 +127,8 @@ def register():
     # alternative gui
     bpy.types.WindowManager.mirawindow = bpy.props.PointerProperty(type = mi_gui.DropdownMiraToolProps)
 
+    bpy.types.VIEW3D_PT_tools_curveedit.append(mi_linear_deformer_curve.linear_deform_button)
+
 def unregister():
     import bpy
 
@@ -143,7 +145,7 @@ def unregister():
     del bpy.types.WindowManager.mirawindow
 
     bpy.utils.unregister_module(__name__)
-
+    bpy.types.VIEW3D_PT_tools_curveedit.remove(mi_linear_deformer_curve.linear_deform_button)
 
 if __name__ == "__main__":
     register()

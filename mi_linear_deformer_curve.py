@@ -31,6 +31,11 @@ from . import mi_widget_linear_deform as l_widget
 from . import mi_inputs
 
 
+
+def linear_deform_button(self, context):
+    layout = self.layout
+    layout.operator("mira.linear_deformer_curve", text="linear deformer")
+
 # Linear Deformer Settings
 class MI_LDeformer_Settings(bpy.types.PropertyGroup):
     manual_update = BoolProperty(default=False)
